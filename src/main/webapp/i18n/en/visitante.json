@@ -1,0 +1,26 @@
+{
+  "maacBeaconApiApp": {
+    "visitante": {
+      "home": {
+        "title": "Visitantes",
+        "createLabel": "Create a new Visitante",
+        "createOrEditLabel": "Create or edit a Visitante",
+        "notFound": "No Visitantes found"
+      },
+      "created": "A new Visitante is created with identifier {{ param }}",
+      "updated": "A Visitante is updated with identifier {{ param }}",
+      "deleted": "A Visitante is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Visitante {{ id }}?"
+      },
+      "detail": {
+        "title": "Visitante"
+      },
+      "nome": "Nome",
+      "email": "Email",
+      "telefone": "Telefone",
+      "idCelular": "Id Celular",
+      "data": "Data"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="beacon">
+            <h2><span jhiTranslate="maacBeaconApiApp.beacon.detail.title">Beacon</span> {{ beacon.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="maacBeaconApiApp.beacon.local">Local</span></dt>
+                <dd>
+                    <span>{{ beacon.local }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.beacon.idBeacon">Id Beacon</span></dt>
+                <dd>
+                    <span>{{ beacon.idBeacon }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.beacon.tipoConteudo">Tipo Conteudo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'maacBeaconApiApp.TipoConteudo.' + beacon.tipoConteudo }}">{{ beacon.tipoConteudo }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.beacon.conteudo">Conteudo</span></dt>
+                <dd>
+                    <span>{{ beacon.conteudo }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.beacon.legenda">Legenda</span></dt>
+                <dd>
+                    <span>{{ beacon.legenda }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/beacon', beacon.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

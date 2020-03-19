@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-beacon-heading" jhiTranslate="maacBeaconApiApp.beacon.home.createOrEditLabel">Create or edit a Beacon</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="maacBeaconApiApp.beacon.local" for="field_local">Local</label>
+                    <input type="text" class="form-control" name="local" id="field_local"
+                           formControlName="local"/>
+                    <div *ngIf="editForm.get('local')!.invalid && (editForm.get('local')!.dirty || editForm.get('local')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('local')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="maacBeaconApiApp.beacon.idBeacon" for="field_idBeacon">Id Beacon</label>
+                    <input type="text" class="form-control" name="idBeacon" id="field_idBeacon"
+                           formControlName="idBeacon"/>
+                    <div *ngIf="editForm.get('idBeacon')!.invalid && (editForm.get('idBeacon')!.dirty || editForm.get('idBeacon')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idBeacon')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="maacBeaconApiApp.beacon.tipoConteudo" for="field_tipoConteudo">Tipo Conteudo</label>
+                    <select class="form-control" name="tipoConteudo" formControlName="tipoConteudo" id="field_tipoConteudo">
+                        <option value="TEXTO">{{ 'maacBeaconApiApp.TipoConteudo.TEXTO' | translate }}</option>
+                        <option value="IMAGEM">{{ 'maacBeaconApiApp.TipoConteudo.IMAGEM' | translate }}</option>
+                        <option value="VIDEO">{{ 'maacBeaconApiApp.TipoConteudo.VIDEO' | translate }}</option>
+                        <option value="NENHUM">{{ 'maacBeaconApiApp.TipoConteudo.NENHUM' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="maacBeaconApiApp.beacon.conteudo" for="field_conteudo">Conteudo</label>
+                    <input type="text" class="form-control" name="conteudo" id="field_conteudo"
+                           formControlName="conteudo"/>
+                    <div *ngIf="editForm.get('conteudo')!.invalid && (editForm.get('conteudo')!.dirty || editForm.get('conteudo')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('conteudo')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 500 }">
+                        This field cannot be longer than 500 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="maacBeaconApiApp.beacon.legenda" for="field_legenda">Legenda</label>
+                    <input type="text" class="form-control" name="legenda" id="field_legenda"
+                           formControlName="legenda"/>
+                    <div *ngIf="editForm.get('legenda')!.invalid && (editForm.get('legenda')!.dirty || editForm.get('legenda')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('legenda')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

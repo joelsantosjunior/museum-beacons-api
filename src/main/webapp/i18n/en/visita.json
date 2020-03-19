@@ -1,0 +1,30 @@
+{
+  "maacBeaconApiApp": {
+    "visita": {
+      "home": {
+        "title": "Visitas",
+        "createLabel": "Create a new Visita",
+        "createOrEditLabel": "Create or edit a Visita",
+        "notFound": "No Visitas found"
+      },
+      "created": "A new Visita is created with identifier {{ param }}",
+      "updated": "A Visita is updated with identifier {{ param }}",
+      "deleted": "A Visita is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Visita {{ id }}?"
+      },
+      "detail": {
+        "title": "Visita"
+      },
+      "nome": "Nome",
+      "email": "Email",
+      "telefone": "Telefone",
+      "cep": "Cep",
+      "endereco": "Endereco",
+      "bairro": "Bairro",
+      "complemento": "Complemento",
+      "idCelular": "Id Celular",
+      "data": "Data"
+    }
+  }
+}

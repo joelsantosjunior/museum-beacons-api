@@ -1,0 +1,87 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="maacBeaconApiApp.visita.home.title">Visitas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-visita" [routerLink]="['/visita/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="maacBeaconApiApp.visita.home.createLabel">
+            Create a new Visita
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="visitas?.length === 0">
+        <span jhiTranslate="maacBeaconApiApp.visita.home.notFound">No visitas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="visitas?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nome"><span jhiTranslate="maacBeaconApiApp.visita.nome">Nome</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="maacBeaconApiApp.visita.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telefone"><span jhiTranslate="maacBeaconApiApp.visita.telefone">Telefone</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cep"><span jhiTranslate="maacBeaconApiApp.visita.cep">Cep</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="endereco"><span jhiTranslate="maacBeaconApiApp.visita.endereco">Endereco</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="bairro"><span jhiTranslate="maacBeaconApiApp.visita.bairro">Bairro</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="complemento"><span jhiTranslate="maacBeaconApiApp.visita.complemento">Complemento</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="idCelular"><span jhiTranslate="maacBeaconApiApp.visita.idCelular">Id Celular</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="data"><span jhiTranslate="maacBeaconApiApp.visita.data">Data</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let visita of visitas ;trackBy: trackId">
+                    <td><a [routerLink]="['/visita', visita.id, 'view']">{{ visita.id }}</a></td>
+                    <td>{{ visita.nome }}</td>
+                    <td>{{ visita.email }}</td>
+                    <td>{{ visita.telefone }}</td>
+                    <td>{{ visita.cep }}</td>
+                    <td>{{ visita.endereco }}</td>
+                    <td>{{ visita.bairro }}</td>
+                    <td>{{ visita.complemento }}</td>
+                    <td>{{ visita.idCelular }}</td>
+                    <td>{{ visita.data | date:'medium' }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/visita', visita.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/visita', visita.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(visita)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="visitas?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

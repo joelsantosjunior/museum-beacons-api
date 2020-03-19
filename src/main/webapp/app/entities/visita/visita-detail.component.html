@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="visita">
+            <h2><span jhiTranslate="maacBeaconApiApp.visita.detail.title">Visita</span> {{ visita.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="maacBeaconApiApp.visita.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ visita.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visita.email">Email</span></dt>
+                <dd>
+                    <span>{{ visita.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visita.telefone">Telefone</span></dt>
+                <dd>
+                    <span>{{ visita.telefone }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visita.cep">Cep</span></dt>
+                <dd>
+                    <span>{{ visita.cep }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visita.endereco">Endereco</span></dt>
+                <dd>
+                    <span>{{ visita.endereco }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visita.bairro">Bairro</span></dt>
+                <dd>
+                    <span>{{ visita.bairro }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visita.complemento">Complemento</span></dt>
+                <dd>
+                    <span>{{ visita.complemento }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visita.idCelular">Id Celular</span></dt>
+                <dd>
+                    <span>{{ visita.idCelular }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visita.data">Data</span></dt>
+                <dd>
+                    <span>{{ visita.data }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/visita', visita.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

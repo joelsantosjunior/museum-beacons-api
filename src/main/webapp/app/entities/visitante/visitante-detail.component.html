@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="visitante">
+            <h2><span jhiTranslate="maacBeaconApiApp.visitante.detail.title">Visitante</span> {{ visitante.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="maacBeaconApiApp.visitante.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ visitante.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visitante.email">Email</span></dt>
+                <dd>
+                    <span>{{ visitante.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visitante.telefone">Telefone</span></dt>
+                <dd>
+                    <span>{{ visitante.telefone }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visitante.idCelular">Id Celular</span></dt>
+                <dd>
+                    <span>{{ visitante.idCelular }}</span>
+                </dd>
+                <dt><span jhiTranslate="maacBeaconApiApp.visitante.data">Data</span></dt>
+                <dd>
+                    <span>{{ visitante.data }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/visitante', visitante.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

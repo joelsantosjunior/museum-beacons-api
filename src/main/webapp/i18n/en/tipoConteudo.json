@@ -1,0 +1,11 @@
+{
+  "maacBeaconApiApp": {
+    "TipoConteudo": {
+      "null": "",
+      "TEXTO": "TEXTO",
+      "IMAGEM": "IMAGEM",
+      "VIDEO": "VIDEO",
+      "NENHUM": "NENHUM"
+    }
+  }
+}

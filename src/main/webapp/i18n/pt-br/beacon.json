@@ -1,0 +1,26 @@
+{
+  "maacBeaconApiApp": {
+    "beacon": {
+      "home": {
+        "title": "Beacons",
+        "createLabel": "Criar novo Beacon",
+        "createOrEditLabel": "Criar ou editar Beacon",
+        "notFound": "Nenhum Beacon encontrado"
+      },
+      "created": "Um novo Beacon foi criado com o identificador {{ param }}",
+      "updated": "Um Beacon foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Beacon foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Beacon {{ id }}?"
+      },
+      "detail": {
+        "title": "Beacon"
+      },
+      "local": "Local",
+      "idBeacon": "Id Beacon",
+      "tipoConteudo": "Tipo Conteudo",
+      "conteudo": "Conteudo",
+      "legenda": "Legenda"
+    }
+  }
+}

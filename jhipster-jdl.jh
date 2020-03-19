@@ -1,0 +1,42 @@
+entity Visitante {
+	nome String required
+    email String
+    telefone String
+    idCelular String required
+	data ZonedDateTime required
+}
+
+entity Visita {
+	nome String required
+    email String
+    telefone String
+    cep String
+    endereco String
+    bairro String
+    complemento String
+    idCelular String required
+	data ZonedDateTime required
+}
+
+entity Beacon {
+	local String required
+    idBeacon String required unique
+    tipoConteudo TipoConteudo
+    conteudo String maxlength(500)
+    legenda String maxlength(250)
+}
+
+enum TipoConteudo {
+	TEXTO, IMAGEM, VIDEO, NENHUM
+}
+
+paginate Beacon, Visita, Visitante with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

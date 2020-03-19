@@ -1,0 +1,53 @@
+{
+    "name": "Beacon",
+    "fields": [
+        {
+            "fieldName": "local",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idBeacon",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "tipoConteudo",
+            "fieldType": "TipoConteudo",
+            "fieldValues": "TEXTO,IMAGEM,VIDEO,NENHUM"
+        },
+        {
+            "fieldName": "conteudo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "500"
+        },
+        {
+            "fieldName": "legenda",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "250"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200319025600",
+    "entityTableName": "beacon",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,11 +1,10 @@
 {
   "home": {
-    "title": "Bem vindo, Java Hipster!",
-    "subtitle": "Esta é a página principal",
+    "title": "Museu Assis Chateaubriand - MAC",
+    "subtitle": "Sistema para gerenciamento de Beacons e acompanhamento de visitas nas dependências do museu, caso não possua uma conta, solicite acesso ao administrador do sistema.",
     "logged": {
       "message": "Você está logado como \"{{username}}\"."
     },
-    "question": "Em caso de dúvida sobre o JHipster:",
     "link": {
       "homepage": "Página principal JHipster",
       "stackoverflow": "JHipster no Stack Overflow",
@@ -13,7 +12,6 @@
       "chat": "Sala de bate-papo pública JHipster",
       "follow": "siga @jhipster no Twitter"
     },
-    "like": "Se você gosta do JHipster, não se esqueça de avaliar no",
     "github": "GitHub"
   }
 }
