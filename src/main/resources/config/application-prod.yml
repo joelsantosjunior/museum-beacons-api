@@ -40,8 +40,8 @@ spring:
       enabled: false
   data:
     mongodb:
-      uri: mongodb://localhost:27017
-      database: maacBeaconApi
+      uri: mongodb+srv://maacdbuser:Xa4PoNX3Win1nxHs@maac-cluster-i3lmh.mongodb.net/test?retryWrites=true&w=majority
+      database: maac-cluster
   mail:
     host: localhost
     port: 25
