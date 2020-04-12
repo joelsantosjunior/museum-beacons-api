@@ -1,7 +1,7 @@
 {
   "kind": "collectionType",
   "connection": "default",
-  "collectionName": "visitas",
+  "collectionName": "visitantes",
   "info": {
     "name": "visitantes"
   },

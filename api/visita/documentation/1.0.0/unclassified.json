@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/visitas": {
+    "/visitantes": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Visita"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Visita"
+          "Unclassified"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Visita"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Visita"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewVisita"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/visitas/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Visita"
+          "Unclassified"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUnclassified"
+              }
+            }
+          }
+        }
       }
     },
-    "/visitas/{id}": {
+    "/visitantes/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Visita"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Visita"
+          "Unclassified"
+        ],
+        "parameters": []
+      }
+    },
+    "/visitantes/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Unclassified"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Visita"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Visita"
+          "Unclassified"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewVisita"
+                "$ref": "#/components/schemas/NewUnclassified"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Visita"
+          "Unclassified"
         ],
         "parameters": [
           {
@@ -512,87 +525,9 @@
       }
     }
   },
-  "components": {
-    "schemas": {
-      "Visita": {
-        "required": [
-          "id",
-          "nome",
-          "idCelular"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "nome": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "telefone": {
-            "type": "string"
-          },
-          "cep": {
-            "type": "string"
-          },
-          "endereco": {
-            "type": "string"
-          },
-          "bairro": {
-            "type": "string"
-          },
-          "complemento": {
-            "type": "string"
-          },
-          "idCelular": {
-            "type": "string"
-          },
-          "data": {
-            "type": "datetime"
-          }
-        }
-      },
-      "NewVisita": {
-        "required": [
-          "nome",
-          "idCelular"
-        ],
-        "properties": {
-          "nome": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "telefone": {
-            "type": "string"
-          },
-          "cep": {
-            "type": "string"
-          },
-          "endereco": {
-            "type": "string"
-          },
-          "bairro": {
-            "type": "string"
-          },
-          "complemento": {
-            "type": "string"
-          },
-          "idCelular": {
-            "type": "string"
-          },
-          "data": {
-            "type": "datetime"
-          }
-        }
-      }
-    }
-  },
   "tags": [
     {
-      "name": "Visita"
+      "name": "Unclassified"
     }
   ]
 }

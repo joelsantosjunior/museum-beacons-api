@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Lifecycle callbacks for the `visita` model.
+ * Lifecycle callbacks for the `visitante` model.
  */
 
 module.exports = {
