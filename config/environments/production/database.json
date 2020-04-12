@@ -1,0 +1,18 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-mongoose",
+      "settings": {
+        "client": "mongo",
+        "uri": "${process.env.DATABASE_URI || 'mongodb+srv://maacdbuser:Xa4PoNX3Win1nxHs@maac-cluster-i3lmh.mongodb.net/test?retryWrites=true&w=majority'}",
+        "host": "${process.env.DATABASE_HOST || '127.0.0.1'}",
+        "port": "${process.env.DATABASE_PORT || 27017}",
+        "database": "${process.env.DATABASE_NAME || 'maac-cluster'}",
+        "username": "${process.env.DATABASE_USERNAME || ''}",
+        "password": "${process.env.DATABASE_PASSWORD || ''}"
+      },
+      "options": {}
+    }
+  }
+}

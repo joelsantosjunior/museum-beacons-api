@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "visitas",
+  "info": {
+    "name": "visitantes"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "cep": {
+      "type": "string"
+    },
+    "endereco": {
+      "type": "string"
+    },
+    "bairro": {
+      "type": "string"
+    },
+    "complemento": {
+      "type": "string"
+    },
+    "idCelular": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "data": {
+      "type": "datetime"
+    }
+  }
+}

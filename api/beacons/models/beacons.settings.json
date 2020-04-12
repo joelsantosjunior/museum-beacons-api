@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "beacons",
+  "info": {
+    "name": "beacons"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "local": {
+      "type": "string"
+    },
+    "idBeacon": {
+      "type": "string"
+    },
+    "tipoConteudo": {
+      "type": "enumeration",
+      "enum": [
+        "texto",
+        "imagem",
+        "video",
+        "nenhum"
+      ]
+    },
+    "conteudo": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "legenda": {
+      "type": "string",
+      "maxLength": 250
+    }
+  }
+}
