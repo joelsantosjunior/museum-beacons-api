@@ -2,7 +2,7 @@
   "defaultConnection": "default",
   "connections": {
     "default": {
-      "connector": "strapi-mongoose",
+      "connector": "mongoose",
       "settings": {
         "client": "mongo",
         "uri": "${process.env.DATABASE_URI || 'mongodb+srv://maacdbuser:Xa4PoNX3Win1nxHs@maac-cluster-i3lmh.mongodb.net/test?retryWrites=true&w=majority'}",
