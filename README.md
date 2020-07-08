@@ -1,3 +1,3 @@
-# Strapi application
+# Strapi application / REST API
 
-A quick description of your strapi application
+Simple REST API to manage the beacons data
